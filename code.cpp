@@ -42,3 +42,9 @@ void loop() {
     performBlink();
   }
 }
+
+void performBlink() {
+  servoBlink.write(150); // Close the eye
+  delay(150);         // Keep it closed for a short time
+  servoBlink.write(90); // Open the eye again
+}
