@@ -23,5 +23,22 @@ void setup() {
   // Initialize the servos to their default positions.
   servoYaw.write(90);   // Center position for yaw
   servoPitch.write(90); // Center position for pitch
-  servoBlink.write(0);  // Start with blink off
+  servoBlink.write(90);  // Start with blink off
+
+  delay(1000); // Allow time for the servos to reach their initial positions
+}
+
+void loop() {
+  
+  int randomYaw = random(60, 120);   // Random yaw angle between 0 and 180 degrees
+  int randomPitch = random(70, 110); // Random pitch angle between 0 and 180 degrees
+  
+  servoYaw.write(randomYaw);
+  servoPitch.write(randomPitch);
+
+  delay(random(500,3000)); // Wait for 2 seconds before changing the angles again
+
+  if (random(0, 10) < 7) { // 30% chance to blink
+    performBlink();
+  }
 }
