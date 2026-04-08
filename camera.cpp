@@ -54,4 +54,16 @@ void setup() {
         return;
     }
 
+    // connect to wifi
+    WiFi.begin(ssid, password);
+    Serial.print("Connecting to WiFi");
+    while (WiFi.status() != WL_CONNECTED) {
+        Serial.print(".");
+        delay(500);
+    }
     
+    Serial.println("");
+    Serial.println("WiFi connected");
+    
+    Serial.print("Camera Stream Ready! Go to: http://");
+    Serial.print(WiFi.localIP());
