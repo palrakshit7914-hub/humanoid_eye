@@ -64,6 +64,13 @@ void setup() {
     
     Serial.println("");
     Serial.println("WiFi connected");
-    
+
     Serial.print("Camera Stream Ready! Go to: http://");
     Serial.print(WiFi.localIP());
+
+}
+
+void loop() {
+  delay(10000);
+
+}
